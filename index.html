@@ -3,111 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unlock Your Data Potential with Google Tag Manager</title>
+    <title>Unlock Your Data Potential: GA4 & GTM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Dark slate text */
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
         .container {
-            width: 80%;
+            max-width: 1024px;
             margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
+            padding: 1.5rem;
         }
         header {
-            background: #333;
+            background: linear-gradient(to right, #4f46e5, #8b5cf6); /* Purple to Indigo gradient */
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
+            padding: 3rem 0;
             text-align: center;
+            border-radius: 0.75rem; /* Rounded corners for header */
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         header h1 {
-            margin: 0;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
-        .main-content {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        header p {
+            font-size: 1.25rem;
+            font-weight: 300;
         }
-        .main-content h2 {
-            color: #333;
-            border-bottom: 2px solid #77aaff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .section-card {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
         }
-        .features ul {
-            list-style: none;
-            padding: 0;
+        .section-card h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4f46e5; /* Indigo color for headings */
+            border-bottom: 2px solid #e0e7ff; /* Light indigo border */
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
         }
-        .features ul li {
-            background: #e6f0ff;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-left: 5px solid #77aaff;
-            border-radius: 4px;
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
+        .feature-item {
+            background-color: #eff6ff; /* Very light blue */
+            padding: 1.5rem;
+            border-left: 5px solid #4f46e5; /* Indigo border on left */
+            border-radius: 0.5rem;
+            transition: transform 0.2s ease-in-out;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        .feature-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e3a8a; /* Darker blue for feature titles */
+            margin-bottom: 0.5rem;
+        }
+        .cta-buttons-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center;
+            gap: 1.5rem; /* Space between buttons */
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e7ff; /* Separator line */
+        }
+        /* Styling for the new button elements */
         .cta-button {
-            display: inline-block;
-            background: #77aaff;
+            background: #8b5cf6; /* Purple button */
             color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-size: 1.1em;
-            transition: background 0.3s ease;
+            padding: 0.75rem 2rem;
+            border: none; /* Remove default button border */
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer; /* Indicate clickable */
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(139, 92, 246, 0.4);
+            white-space: nowrap; /* Prevent button text from wrapping */
+            display: inline-block; /* Ensure padding and margin work correctly */
+            text-decoration: none; /* Remove underline for consistency, though not strictly needed for buttons */
         }
         .cta-button:hover {
-            background: #5588dd;
+            background: #6d28d9; /* Darker purple on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 92, 246, 0.6); /* Enhanced shadow on hover */
         }
         footer {
             text-align: center;
-            padding: 20px;
-            background: #333;
-            color: #fff;
-            margin-top: 30px;
+            padding: 1.5rem;
+            background-color: #334155; /* Dark slate footer */
+            color: #cbd5e1; /* Light gray text for footer */
+            margin-top: 2rem;
+            border-radius: 0.75rem;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Unlock Your Data Potential with Google Tag Manager</h1>
+            <h1>Master Your Data: Google Analytics 4 & Google Tag Manager</h1>
+            <p>Unify, optimize, and understand your customer journey across all platforms.</p>
         </div>
     </header>
 
     <div class="container">
-        <section class="main-content">
-            <h2>Effortless Tracking, Powerful Insights</h2>
-            <p>Are you struggling to manage all your website tags? Google Tag Manager (GTM) simplifies the process, giving you the power to add and update website tags and mobile app tags from a user-friendly web interface, without needing to modify your website code every time.</p>
+        <section class="section-card">
+            <h2>Google Analytics 4 (GA4): The Future of Measurement</h2>
+            <p>Google Analytics 4 revolutionizes how you understand user behavior across your websites and mobile apps. Moving beyond traditional session-based data, GA4 employs an event-based model that provides a more holistic view of the customer lifecycle, enabling deeper insights into engagement and conversions.</p>
 
-            <div class="features">
-                <h2>Why Choose Google Tag Manager?</h2>
-                <ul>
-                    <li><strong>Simplify Tag Management:</strong> Deploy and manage all your marketing and analytics tags (Google Analytics, Google Ads, Facebook Pixel, etc.) in one place.</li>
-                    <li><strong>Increase Agility:</strong> Make changes quickly without developer intervention, speeding up your marketing campaigns and data collection efforts.</li>
-                    <li><strong>Improve Site Performance:</strong> GTM loads tags asynchronously, which can help your website load faster.</li>
-                    <li><strong>Enhanced Data Accuracy:</strong> Implement tags correctly and consistently across your site, leading to more reliable data.</li>
-                    <li><strong>Robust Version Control:</strong> Easily track changes, preview new tags, and revert to previous versions if needed.</li>
-                </ul>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Event-Based Data Model</h3>
+                    <p>Track every interaction as an event, offering unparalleled flexibility and richer insights into user journeys.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Cross-Platform Insights</h3>
+                    <p>Seamlessly connect user behavior across web and app platforms for a unified customer view.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Predictive Capabilities</h3>
+                    <p>Leverage AI and machine learning to anticipate user actions and identify high-value audiences.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Privacy-Centric Design</h3>
+                    <p>Built for the future, offering greater control over data collection in a evolving privacy landscape.</p>
+                </div>
+            </div>
+            
+            <p class="mt-8">GA4 empowers you to make smarter, more data-driven decisions by providing a comprehensive understanding of how users engage with your content and optimize your marketing efforts.</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Google Tag Manager (GTM): Simplify Your Tracking</h2>
+            <p>Google Tag Manager simplifies the process of adding and updating website and mobile app tags from a user-friendly web interface. Eliminate the need to constantly modify your website code, empowering marketers and developers to streamline their workflows and focus on data strategy.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Centralized Tag Management</h3>
+                    <p>Deploy and manage all your marketing and analytics tags (GA4, Google Ads, etc.) from one intuitive platform.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Rapid Deployment</h3>
+                    <p>Make changes quickly without developer intervention, accelerating your marketing campaigns and data collection.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Improved Site Performance</h3>
+                    <p>GTM loads tags asynchronously, which can contribute to faster website loading times.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Robust Version Control</h3>
+                    <p>Easily track changes, preview new tags, and revert to previous versions for peace of mind.</p>
+                </div>
             </div>
 
-            <p>Take control of your data strategy and gain deeper insights into your audience behavior. GTM empowers marketers and developers alike to streamline their workflows and focus on what truly matters: understanding your users.</p>
-
-            <p style="text-align: center;">
-                <!-- Added an ID to the button for GTM tracking purposes -->
-                <a href="thankyou.html" class="cta-button" id="gtm-learn-more-button">Learn More About GTM Today!</a>
-            </p>
+            <p class="mt-8">GTM complements GA4 by providing the essential infrastructure for efficient and accurate data collection, ensuring your analytics are always up-to-date and reliable.</p>
         </section>
+
+        <div class="cta-buttons-container">
+            <!-- Button for Google Analytics 4 with ID for GTM tracking -->
+            <!-- Changed <a> to <button> and added onclick for redirection -->
+            <button class="cta-button" id="cta-ga4-button" onclick="window.location.href='thankyou.html'">
+                Learn More About Google Analytics 4
+            </button>
+            
+            <!-- Button for GTM with ID for GTM tracking -->
+            <!-- Changed <a> to <button> and added onclick for redirection -->
+            <button class="cta-button" id="cta-gtm-button" onclick="window.location.href='thankyou.html'">
+                Explore Google Tag Manager
+            </button>
+        </div>
     </div>
 
     <footer>
